@@ -10,7 +10,7 @@ export class TrainScheduleService {
     getCarsSmall() {
         return this.http.get('assets/cars-small.json')
                     .toPromise()
-                    .then(res => <Train[]> res.json().data)
+                    .then(res => res.json().data)
                     .then(data => { return data; });
     }
 
