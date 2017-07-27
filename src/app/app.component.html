@@ -1,3 +1,17 @@
-<h1>
-  {{title}}
-</h1>
+<div class="ui-g container">
+  <header class="topbar ui-g-12">
+    <app-topbar></app-topbar>
+  </header>
+
+  <section class="secondary-bar-wrapper ui-g-12">
+    <app-secondary-bar></app-secondary-bar>
+  </section>
+
+  <section class="ui-g-12 router-wrapper">
+    <router-outlet></router-outlet>
+    <footer class="ui-g-11" [class.long-footer]="railPage">
+      <app-footer></app-footer>
+    </footer>
+  </section>
+
+</div>

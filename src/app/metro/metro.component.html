@@ -1,0 +1,21 @@
+
+<div class="metro-container main">
+    <p-growl [(value)]="stationsService.errorMsgs"></p-growl>
+    <div class="metro-color ui-g-1">
+        <app-colors (colorClicked)="onColorClicked($event)"></app-colors>
+    </div>
+
+    <div class="stations ui-g-4">
+        <app-stations [dropdownData]="stationsService.stationsDropdown" (stationSelected)="onStationSelected($event)"></app-stations>
+    </div>
+    
+    <div class="station-info ui-g-7">
+        <app-station-info *ngIf="railData?.length > 0; else infoplaceholder" [railData]="railData" [selectedStation]="selectedStation" [serviceTime]="serviceTime"></app-station-info>
+        <ng-template #infoplaceholder>
+            <div class="station-info-placeholder card">
+                <i class="fa fa-train" aria-hidden="true"></i>
+                <br />No station selected
+            </div>
+        </ng-template>
+    </div>
+</div>

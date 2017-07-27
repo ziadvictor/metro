@@ -1,0 +1,12 @@
+<div class="color-wrapper">
+  <p class="line-filter">Filter by Line</p>
+  <ul class="colors">
+    <li class="all" [class.active]="selectedColor === ''" (click)="onColorClicked('')"><div class="color-name-wrapper"><span class="color-name">All</span></div></li>
+    <li class="red" [class.active]="selectedColor === 'RD'" (click)="onColorClicked('RD')"><div class="color-name-wrapper"><span class="color-name">RD</span></div></li>
+    <li class="orange" [class.active]="selectedColor === 'OR'" (click)="onColorClicked('OR')"><div class="color-name-wrapper"><span class="color-name">OR</span></div></li>
+    <li class="silver" [class.active]="selectedColor === 'SV'" (click)="onColorClicked('SV')"><div class="color-name-wrapper"><span class="color-name">SV</span></div></li>
+    <li class="blue" [class.active]="selectedColor === 'BL'" (click)="onColorClicked('BL')"><div class="color-name-wrapper"><span class="color-name">BL</span></div></li>
+    <li class="yellow" [class.active]="selectedColor === 'YL'" (click)="onColorClicked('YL')"><div class="color-name-wrapper"><span class="color-name">YL</span></div></li>
+    <li class="green" [class.active]="selectedColor === 'GR'" (click)="onColorClicked('GR')"><div class="color-name-wrapper"><span class="color-name">GR</span></div></li>
+  </ul>
+</div>

@@ -1,0 +1,26 @@
+<div class="card">
+  <h3 class="real-time-prediction-header">Real-time rail prediction for {{selectedStation}}</h3>
+  <div class="rail_table-wrapper">
+    <div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
+      <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+      <input #gb type="text" pInputText size="50" placeholder="Filter">
+      <span class="updated-time">Updated at: {{serviceTime | date:'shortTime'}}&nbsp;&nbsp;&nbsp;<i class="fa fa-circle"></i></span>
+    </div>
+    <p-dataTable [value]="railData" [globalFilter]="gb" #dt>
+      <p-column field="line" header="Line" [sortable]="true" >
+        <ng-template pTemplate="body" let-line="rowData" let-col>
+            <span [ngClass]="setClasses(line[col.field])">{{line[col.field]}}</span> 
+        </ng-template>
+      </p-column>
+      <p-column field="destination" header="Destination" [sortable]="true"></p-column>
+      <!-- <p-column field="time" header="Time Remaining"></p-column> -->
+      <p-column field="time" header="Time Remaining" filterMatchMode="equals">
+        <ng-template pTemplate="body" let-time="rowData" let-col>
+            <span [ngClass]="setTimeClass(time[col.field])">{{time[col.field]}} min</span>
+            <span [ngClass]="setBoardingTextClass(time[col.field])"></span>
+            <span [ngClass]="setBoardingIconClass(time[col.field])"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></span>
+        </ng-template>
+      </p-column>
+    </p-dataTable>
+  </div>
+</div>
