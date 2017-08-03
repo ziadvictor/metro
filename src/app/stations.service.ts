@@ -6,7 +6,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class StationsService {
 
-  apiKey : string = '9248e56fb7054f7697c7b32c2d2876a0';
+  apiKey : string = 'e1eee2b5677f408da40af8480a5fd5a8' //Demo key from WMATA;
   stations = [];
   stationsDropdown = [{'label':'Select a station', 'value':''}];
   errorMsgs = [];
