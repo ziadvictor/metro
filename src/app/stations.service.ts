@@ -19,7 +19,6 @@ export class StationsService {
   }
 
   getMetroStations(lineCode) {
-    console.log(lineCode);
     if(lineCode == ''){
       this.lineCodeFullName = 'All Lines';
     }

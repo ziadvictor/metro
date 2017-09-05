@@ -13,7 +13,7 @@ export class MetroComponent implements OnInit {
   selectedStation: string;
   serviceTime: Number;
 
-  constructor(private stationsService: StationsService) { }
+  constructor(public stationsService: StationsService) { }
 
   ngOnInit() {
     // this.stationsService.getMetroStations('');
